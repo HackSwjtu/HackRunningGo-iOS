@@ -11,6 +11,8 @@
 #import "RouteAnnotation.h"
 #import <UIKit/UIKit.h>
 
+static int INDEX = 1;
+
 @interface ViewController ()<BMKMapViewDelegate, BMKLocationServiceDelegate, BMKRouteSearchDelegate>
 
 @property (nonatomic, strong) BMKMapView *mapView;
@@ -18,7 +20,9 @@
 
 @property (nonatomic, strong) BMKRouteSearch *routeSearch;
 
+@property (nonatomic, strong) NSMutableArray<NSValue *> *testPoints;
 @property (nonatomic, strong) NSMutableArray<NSValue *> *routePoints;
+@property (nonatomic, strong) NSMutableArray<BMKPolyline *> *polylines;
 @property (assign) NSInteger distance;
 @end
 
@@ -27,6 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.routePoints = @[].mutableCopy;
+    self.testPoints = @[].mutableCopy;
+    self.polylines = @[].mutableCopy;
+    self.distance = 0;
     
     self.mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 480)];
     self.mapView.delegate = self;
@@ -37,8 +44,14 @@
     
     self.mapView.showsUserLocation = YES;
     [self.view addSubview:self.mapView];
+}
+
+- (void)givePoints {
+    [self addTestPoint:CLLocationCoordinate2DMake(30.771025, 103.985729)];
+    [self addTestPoint:CLLocationCoordinate2DMake(30.768690, 103.987364)];
+    [self addTestPoint:CLLocationCoordinate2DMake(30.772452, 103.988141)];
+    [self addTestPoint:CLLocationCoordinate2DMake(30.768566, 103.989982)];
     
-    [self routeDesign];
 }
 
 - (void)routeDesign {
@@ -46,13 +59,13 @@
     self.routeSearch.delegate = self;
     
     BMKPlanNode *start = [[BMKPlanNode alloc] init];
-    start.pt = CLLocationCoordinate2DMake(31.176517, 121.404209);
+    start.pt = CLLocationCoordinate2DMake(30.771025, 103.985729);
     start.name = @"home";
     start.cityName = @"上海";
     
     
     BMKPlanNode *end = [[BMKPlanNode alloc] init];
-    [end setPt:CLLocationCoordinate2DMake(31.175818, 121.402547)];
+    [end setPt:CLLocationCoordinate2DMake(30.768690, 103.987364)];
     end.name = @"123";
     end.cityName = @"上海";
     
@@ -60,8 +73,33 @@
     option.from = start;
     option.to = end;
     
+    [self.routeSearch walkingSearch:option];
+}
+
+- (void)createRunningRoute {
+    if (self.testPoints.count < 1 || INDEX == self.testPoints.count) return;
+    self.routeSearch = [[BMKRouteSearch alloc] init];
+    self.routeSearch.delegate = self;
+    
+    NSValue *pnv1 = self.testPoints[INDEX - 1];
+    NSValue *pnv2 = self.testPoints[INDEX];
+    
+    CGPoint pnp1 = [pnv1 CGPointValue];
+    CGPoint pnp2 = [pnv2 CGPointValue];
+    
+    BMKPlanNode *start = [[BMKPlanNode alloc] init];
+    start.pt = CLLocationCoordinate2DMake(pnp1.x, pnp1.y);
+    
+    BMKPlanNode *end = [[BMKPlanNode alloc] init];
+    end.pt = CLLocationCoordinate2DMake(pnp2.x, pnp2.y);
+    
+    BMKWalkingRoutePlanOption *option = [[BMKWalkingRoutePlanOption alloc] init];
+    option.from = start;
+    option.to = end;
     
     [self.routeSearch walkingSearch:option];
+    
+    INDEX ++;
 }
 
 #pragma mark - BMKLocationServiceDelegate
@@ -75,13 +113,9 @@
 }
 
 - (void)onGetWalkingRouteResult:(BMKRouteSearch *)searcher result:(BMKWalkingRouteResult *)result errorCode:(BMKSearchErrorCode)error {
-    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
-    [_mapView removeAnnotations:array];
-    array = [NSArray arrayWithArray:_mapView.overlays];
-    [_mapView removeOverlays:array];
     if (error == BMK_SEARCH_NO_ERROR) {
         BMKWalkingRouteLine* plan = (BMKWalkingRouteLine*)[result.routes objectAtIndex:0];
-        self.distance = plan.distance;
+        self.distance += plan.distance;
         NSInteger size = [plan.steps count];
         int planPointCounts = 0;
         for (int i = 0; i < size; i++) {
@@ -132,9 +166,13 @@
         BMKPolyline* polyLine = [BMKPolyline polylineWithPoints:temppoints count:planPointCounts];
         
         [_mapView addOverlay:polyLine]; // 添加路线overlay
+//        [self.polylines addObject:polyLine];
         delete []temppoints;
         [self mapViewFitPolyLine:polyLine];
     }
+    
+    NSLog(@"%@", self.routePoints);
+    NSLog(@"%ld", self.distance);
 }
 
 #pragma mark - BMKMapViewDelegate
@@ -149,9 +187,9 @@
 - (BMKOverlayView*)mapView:(BMKMapView *)map viewForOverlay:(id<BMKOverlay>)overlay {
     if ([overlay isKindOfClass:[BMKPolyline class]]) {
         BMKPolylineView* polylineView = [[BMKPolylineView alloc] initWithOverlay:overlay];
-        polylineView.fillColor = [[UIColor alloc] initWithRed:0 green:1 blue:1 alpha:1];
+        polylineView.fillColor = [[UIColor alloc] initWithRed:0 green:1 blue:1 alpha:0.5];
         polylineView.strokeColor = [[UIColor alloc] initWithRed:0 green:0 blue:1 alpha:0.7];
-        polylineView.lineWidth = 3.0;
+        polylineView.lineWidth = 6.0;
         return polylineView;
     }
     return nil;
@@ -196,8 +234,21 @@
 //    CLLocationCoordinate2D a = BMKCoordinateForMapPoint(temppoints[i]);
 //    NSLog(@"%lf %lf", a.latitude, a.longitude);
 }
+
+- (void)addTestPoint: (CLLocationCoordinate2D)po {
+    CGPoint p = CGPointMake(po.latitude, po.longitude);
+    NSValue *pv = [NSValue valueWithCGPoint:p];
+    [self.testPoints addObject:pv];
+}
+
 - (IBAction)logPoints:(id)sender {
-    NSLog(@"%@", self.routePoints);
+    [self givePoints];
+    
+}
+- (IBAction)drawLines:(id)sender {
+    self.routePoints = @[].mutableCopy;
+    self.distance = 0;
+    [self createRunningRoute];
 }
 
 @end

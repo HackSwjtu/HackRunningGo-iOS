@@ -19,11 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULb-4J-4jv">
-                                <frame key="frameInset" minX="164" minY="617" width="46" height="30"/>
+                                <frame key="frameInset" minX="42" minY="617" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="create"/>
                                 <connections>
                                     <action selector="logPoints:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Nt-Dc-Z6s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lO-b2-mcl">
+                                <frame key="frameInset" minX="292" minY="623" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="draw"/>
+                                <connections>
+                                    <action selector="drawLines:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vky-6g-ARp"/>
                                 </connections>
                             </button>
                         </subviews>

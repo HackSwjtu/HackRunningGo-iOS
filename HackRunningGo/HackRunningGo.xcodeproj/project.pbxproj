@@ -16,6 +16,8 @@
 		D5FC65F31DB4DB07003E5D7D /* RouteAnnotation.mm in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65F21DB4DB07003E5D7D /* RouteAnnotation.mm */; };
 		D5FC65F61DB4DBDF003E5D7D /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65F51DB4DBDF003E5D7D /* UIImage+Rotate.m */; };
 		D5FC65FB1DB4F76D003E5D7D /* HSJPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65FA1DB4F76D003E5D7D /* HSJPointModel.m */; };
+		D5FC65FD1DB5260E003E5D7D /* icon_waypoint.png in Resources */ = {isa = PBXBuildFile; fileRef = D5FC65FC1DB5260E003E5D7D /* icon_waypoint.png */; };
+		D5FC66091DB52627003E5D7D /* icon_start.png in Resources */ = {isa = PBXBuildFile; fileRef = D5FC66031DB52627003E5D7D /* icon_start.png */; };
 		F0E4DA012DFAA3AC29A75829 /* libPods-HackRunningGo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6776D83F6B8F9E18D4B33A29 /* libPods-HackRunningGo.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		D5FC65F51DB4DBDF003E5D7D /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
 		D5FC65F91DB4F76D003E5D7D /* HSJPointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSJPointModel.h; path = Model/HSJPointModel.h; sourceTree = "<group>"; };
 		D5FC65FA1DB4F76D003E5D7D /* HSJPointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSJPointModel.m; path = Model/HSJPointModel.m; sourceTree = "<group>"; };
+		D5FC65FC1DB5260E003E5D7D /* icon_waypoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_waypoint.png; sourceTree = "<group>"; };
+		D5FC66031DB52627003E5D7D /* icon_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_start.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 		D5FC65D01DB45E4C003E5D7D /* HackRunningGo */ = {
 			isa = PBXGroup;
 			children = (
+				D5FC65FC1DB5260E003E5D7D /* icon_waypoint.png */,
+				D5FC66031DB52627003E5D7D /* icon_start.png */,
 				D5FC65F01DB4B828003E5D7D /* BaiduAPI.h */,
 				D5FC65D41DB45E4C003E5D7D /* AppDelegate.h */,
 				D5FC65D51DB45E4C003E5D7D /* AppDelegate.m */,
@@ -202,6 +208,8 @@
 				D5FC65E11DB45E4C003E5D7D /* LaunchScreen.storyboard in Resources */,
 				D5FC65DE1DB45E4C003E5D7D /* Assets.xcassets in Resources */,
 				D5FC65DC1DB45E4C003E5D7D /* Main.storyboard in Resources */,
+				D5FC65FD1DB5260E003E5D7D /* icon_waypoint.png in Resources */,
+				D5FC66091DB52627003E5D7D /* icon_start.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

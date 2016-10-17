@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		D5FC65D31DB45E4C003E5D7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65D21DB45E4C003E5D7D /* main.m */; };
 		D5FC65D61DB45E4C003E5D7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65D51DB45E4C003E5D7D /* AppDelegate.m */; };
-		D5FC65D91DB45E4C003E5D7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65D81DB45E4C003E5D7D /* ViewController.m */; };
+		D5FC65D91DB45E4C003E5D7D /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65D81DB45E4C003E5D7D /* ViewController.mm */; };
 		D5FC65DC1DB45E4C003E5D7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5FC65DA1DB45E4C003E5D7D /* Main.storyboard */; };
 		D5FC65DE1DB45E4C003E5D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5FC65DD1DB45E4C003E5D7D /* Assets.xcassets */; };
 		D5FC65E11DB45E4C003E5D7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5FC65DF1DB45E4C003E5D7D /* LaunchScreen.storyboard */; };
+		D5FC65F31DB4DB07003E5D7D /* RouteAnnotation.mm in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65F21DB4DB07003E5D7D /* RouteAnnotation.mm */; };
+		D5FC65F61DB4DBDF003E5D7D /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65F51DB4DBDF003E5D7D /* UIImage+Rotate.m */; };
+		D5FC65FB1DB4F76D003E5D7D /* HSJPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65FA1DB4F76D003E5D7D /* HSJPointModel.m */; };
 		F0E4DA012DFAA3AC29A75829 /* libPods-HackRunningGo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6776D83F6B8F9E18D4B33A29 /* libPods-HackRunningGo.a */; };
 /* End PBXBuildFile section */
 
@@ -25,12 +28,18 @@
 		D5FC65D41DB45E4C003E5D7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D5FC65D51DB45E4C003E5D7D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D5FC65D71DB45E4C003E5D7D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D5FC65D81DB45E4C003E5D7D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D5FC65D81DB45E4C003E5D7D /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		D5FC65DB1DB45E4C003E5D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5FC65DD1DB45E4C003E5D7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5FC65E01DB45E4C003E5D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5FC65E21DB45E4C003E5D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5FC65F01DB4B828003E5D7D /* BaiduAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiduAPI.h; sourceTree = "<group>"; };
+		D5FC65F11DB4DB07003E5D7D /* RouteAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteAnnotation.h; sourceTree = "<group>"; };
+		D5FC65F21DB4DB07003E5D7D /* RouteAnnotation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RouteAnnotation.mm; sourceTree = "<group>"; };
+		D5FC65F41DB4DBDF003E5D7D /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		D5FC65F51DB4DBDF003E5D7D /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		D5FC65F91DB4F76D003E5D7D /* HSJPointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSJPointModel.h; path = Model/HSJPointModel.h; sourceTree = "<group>"; };
+		D5FC65FA1DB4F76D003E5D7D /* HSJPointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSJPointModel.m; path = Model/HSJPointModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +96,9 @@
 				D5FC65D41DB45E4C003E5D7D /* AppDelegate.h */,
 				D5FC65D51DB45E4C003E5D7D /* AppDelegate.m */,
 				D5FC65D71DB45E4C003E5D7D /* ViewController.h */,
-				D5FC65D81DB45E4C003E5D7D /* ViewController.m */,
+				D5FC65D81DB45E4C003E5D7D /* ViewController.mm */,
+				D5FC65F81DB4F3E9003E5D7D /* Helper */,
+				D5FC65F71DB4F3D8003E5D7D /* Model */,
 				D5FC65DA1DB45E4C003E5D7D /* Main.storyboard */,
 				D5FC65DD1DB45E4C003E5D7D /* Assets.xcassets */,
 				D5FC65DF1DB45E4C003E5D7D /* LaunchScreen.storyboard */,
@@ -103,6 +114,26 @@
 				D5FC65D21DB45E4C003E5D7D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5FC65F71DB4F3D8003E5D7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5FC65F91DB4F76D003E5D7D /* HSJPointModel.h */,
+				D5FC65FA1DB4F76D003E5D7D /* HSJPointModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D5FC65F81DB4F3E9003E5D7D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D5FC65F11DB4DB07003E5D7D /* RouteAnnotation.h */,
+				D5FC65F21DB4DB07003E5D7D /* RouteAnnotation.mm */,
+				D5FC65F41DB4DBDF003E5D7D /* UIImage+Rotate.h */,
+				D5FC65F51DB4DBDF003E5D7D /* UIImage+Rotate.m */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5FC65D91DB45E4C003E5D7D /* ViewController.m in Sources */,
+				D5FC65F31DB4DB07003E5D7D /* RouteAnnotation.mm in Sources */,
+				D5FC65D91DB45E4C003E5D7D /* ViewController.mm in Sources */,
 				D5FC65D61DB45E4C003E5D7D /* AppDelegate.m in Sources */,
+				D5FC65F61DB4DBDF003E5D7D /* UIImage+Rotate.m in Sources */,
+				D5FC65FB1DB4F76D003E5D7D /* HSJPointModel.m in Sources */,
 				D5FC65D31DB45E4C003E5D7D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

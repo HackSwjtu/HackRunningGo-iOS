@@ -30,6 +30,7 @@
 		D5FC65DD1DB45E4C003E5D7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5FC65E01DB45E4C003E5D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5FC65E21DB45E4C003E5D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5FC65F01DB4B828003E5D7D /* BaiduAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiduAPI.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +83,7 @@
 		D5FC65D01DB45E4C003E5D7D /* HackRunningGo */ = {
 			isa = PBXGroup;
 			children = (
+				D5FC65F01DB4B828003E5D7D /* BaiduAPI.h */,
 				D5FC65D41DB45E4C003E5D7D /* AppDelegate.h */,
 				D5FC65D51DB45E4C003E5D7D /* AppDelegate.m */,
 				D5FC65D71DB45E4C003E5D7D /* ViewController.h */,

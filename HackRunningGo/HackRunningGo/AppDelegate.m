@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    _mapManager = [[BMKMapManager alloc]init];
+    
+    BOOL ret = [_mapManager start:@"Wno6MztqrlipKrzlB6vzs3QHz81ljb2k"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+    // Add the navigation controller's view to the window and display.
+    [self.window addSubview:navigationController.view];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

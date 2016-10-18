@@ -66,7 +66,7 @@ static int INDEX = 1;
                                                              style:UIBarButtonItemStyleDone
                                                             target:self
                                                             action:@selector(logPoints:)];
-    self.navigationItem.rightBarButtonItem = item;git st
+    self.navigationItem.rightBarButtonItem = item;
     
     self.goButton.layer.cornerRadius = 30;
     self.goButton.layer.masksToBounds = YES;

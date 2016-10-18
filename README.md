@@ -1,7 +1,7 @@
 # HackRunningGo-iOS
 iPhone can run without legs. 😎
 
-## Simple UI
+## Screenshot
 
 ![](http://of7whelxn.bkt.clouddn.com/HackRun-iOS.png)
 

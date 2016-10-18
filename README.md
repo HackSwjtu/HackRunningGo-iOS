@@ -1,6 +1,28 @@
 # HackRunningGo-iOS
 iPhone can run without legs. 😎
 
+## Virtual Request Header
+
+This is simulated request header. You can use the `RHSJUserDataDefault.m` to generate one. 
+
+```bash
+POST /api/v3/login HTTP/1.1
+Host: gxapp.iydsj.com
+Accept: */*
+Authorization: Basic DESGARDDUAN4MDM6ZGh5OTQxMTM=
+Proxy-Connection: keep-alive
+osType: 1
+appVersion: 1.2.0
+Accept-Language: zh-Hans-CN;q=1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+DeviceId: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+CustomDeviceId: FC139628-F5F6-423A-ADBF-C8E310FCB713_iOS_sportsWorld_campus
+Content-Length: 0
+User-Agent: SWCampus/1.2.0 (iPhone; iOS 9.3.4; Scale/3.00)
+Connection: keep-alive
+Cache-Control: no-cache
+```
+
 ## Running Route Generator
 
 ![](http://of7whelxn.bkt.clouddn.com/DataGenerator.png)

@@ -51,7 +51,13 @@ static int INDEX = 1;
     [self addTestPoint:CLLocationCoordinate2DMake(30.768690, 103.987364)];
     [self addTestPoint:CLLocationCoordinate2DMake(30.772452, 103.988141)];
     [self addTestPoint:CLLocationCoordinate2DMake(30.768566, 103.989982)];
-    
+    [self addTestPoint:CLLocationCoordinate2DMake(30.768566, 103.989982)];
+    [self addTestPoint:CLLocationCoordinate2DMake(30.765339, 103.990072)];
+    [self addTestPoint:CLLocationCoordinate2DMake(30.775152, 103.990113)];
+    [self addTestPoint:CLLocationCoordinate2DMake(30.769404, 103.991393)];
+    [self addTestPoint:CLLocationCoordinate2DMake(30.763314, 103.991707)];
+    [self addTestPoint:CLLocationCoordinate2DMake(30.767362, 103.992839)];
+    [self addTestPoint:CLLocationCoordinate2DMake(30.772670, 103.993903)];
 }
 
 - (void)routeDesign {

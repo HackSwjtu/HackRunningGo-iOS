@@ -9,11 +9,18 @@
 #import "ViewController.h"
 #import "BaiduAPI.h"
 #import "RouteAnnotation.h"
+#import "NSString+Base64.h"
+#import <Masonry.h>
 #import <UIKit/UIKit.h>
 
 static int INDEX = 1;
 
 @interface ViewController ()<BMKMapViewDelegate, BMKLocationServiceDelegate, BMKRouteSearchDelegate>
+@property (weak, nonatomic) IBOutlet UIView *mapViewSuperView;
+@property (weak, nonatomic) IBOutlet UIButton *goButton;
+@property (weak, nonatomic) IBOutlet UILabel *disLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
 
 @property (nonatomic, strong) BMKMapView *mapView;
 @property (nonatomic, strong) BMKLocationService *locationService;
@@ -34,6 +41,7 @@ static int INDEX = 1;
     self.testPoints = @[].mutableCopy;
     self.polylines = @[].mutableCopy;
     self.distance = 0;
+    self.requestHeader = [[HSJUserDataDefault alloc] init];
     
     self.mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 480)];
     self.mapView.delegate = self;
@@ -43,7 +51,29 @@ static int INDEX = 1;
     [self.locationService startUserLocationService];
     
     self.mapView.showsUserLocation = YES;
-    [self.view addSubview:self.mapView];
+    [self.mapViewSuperView addSubview:self.mapView];
+    
+    [self updateLayout];
+    
+}
+
+- (void)updateLayout {
+    self.title = @"HaRunGo";
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    [navBar setBarStyle:UIBarStyleBlackOpaque];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"plus-square"]
+                                                             style:UIBarButtonItemStyleDone
+                                                            target:self
+                                                            action:@selector(logPoints:)];
+    self.navigationItem.rightBarButtonItem = item;
+    
+    self.goButton.layer.cornerRadius = 30;
+    self.goButton.layer.masksToBounds = YES;
+    
+    [self.mapView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.mapViewSuperView).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
 }
 
 - (void)givePoints {
@@ -178,7 +208,7 @@ static int INDEX = 1;
     }
     
     NSLog(@"%@", self.routePoints);
-    NSLog(@"%ld", self.distance);
+    NSLog(@"%ld", (long)self.distance);
 }
 
 #pragma mark - BMKMapViewDelegate

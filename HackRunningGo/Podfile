@@ -3,6 +3,6 @@ target 'HackRunningGo' do
 
 pod 'BaiduMapKit'
 pod 'AFNetworking', '~> 3.0'
-
+pod 'Masonry'
 end
 

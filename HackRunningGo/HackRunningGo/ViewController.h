@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HSJUserDataDefault.h"
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) HSJUserDataDefault *requestHeader;
 
 @end
 

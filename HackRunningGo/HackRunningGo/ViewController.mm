@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "BaiduAPI.h"
 #import "RouteAnnotation.h"
+#import "NSString+Base64.h"
 #import <UIKit/UIKit.h>
 
 static int INDEX = 1;
@@ -34,6 +35,7 @@ static int INDEX = 1;
     self.testPoints = @[].mutableCopy;
     self.polylines = @[].mutableCopy;
     self.distance = 0;
+    self.requestHeader = [[HSJUserDataDefault alloc] init];
     
     self.mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 480)];
     self.mapView.delegate = self;
@@ -44,6 +46,13 @@ static int INDEX = 1;
     
     self.mapView.showsUserLocation = YES;
     [self.view addSubview:self.mapView];
+    
+    [self updateLayout];
+    
+}
+
+- (void)updateLayout {
+    
 }
 
 - (void)givePoints {

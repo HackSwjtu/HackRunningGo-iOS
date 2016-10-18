@@ -25,7 +25,7 @@ Cache-Control: no-cache
 
 ## Running Route Generator
 
-![](http://of7whelxn.bkt.clouddn.com/DataGenerator.png)
+<img src="http://of7whelxn.bkt.clouddn.com/DataGenerator.png" width="400px"/>
 
 The Generator can create a simulated running route. And it can pass all selected test points, which can return a `NSArray` to record Route Pointes. Just like following:
 

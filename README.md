@@ -1,6 +1,10 @@
 # HackRunningGo-iOS
 iPhone can run without legs. 😎
 
+## Screenshot
+
+![](http://of7whelxn.bkt.clouddn.com/HackRun-iOS.png)
+
 ## Virtual Request Header
 
 This is simulated request header. You can use the `RHSJUserDataDefault.m` to generate one. 

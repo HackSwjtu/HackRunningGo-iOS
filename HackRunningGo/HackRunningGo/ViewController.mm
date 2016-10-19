@@ -10,6 +10,7 @@
 #import "BaiduAPI.h"
 #import "RouteAnnotation.h"
 #import "NSString+Base64.h"
+#import "HSJDropDownMenuView.h"
 #import <Masonry.h>
 #import <UIKit/UIKit.h>
 
@@ -26,6 +27,7 @@ static int INDEX = 1;
 @property (nonatomic, strong) BMKLocationService *locationService;
 
 @property (nonatomic, strong) BMKRouteSearch *routeSearch;
+@property (nonatomic, strong) HSJDropDownMenuView *dropDownMenuView;
 
 @property (nonatomic, strong) NSMutableArray<NSValue *> *testPoints;
 @property (nonatomic, strong) NSMutableArray<NSValue *> *routePoints;
@@ -53,7 +55,11 @@ static int INDEX = 1;
     self.mapView.showsUserLocation = YES;
     [self.mapViewSuperView addSubview:self.mapView];
     
+    
     [self updateLayout];
+    
+    self.dropDownMenuView = [[HSJDropDownMenuView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height, self.view.frame.size.width, self.mapView.frame.size.height)];
+    [self.view addSubview:self.dropDownMenuView];
     
 }
 
@@ -63,9 +69,10 @@ static int INDEX = 1;
     [navBar setBarStyle:UIBarStyleBlackOpaque];
     
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"plus-square"]
-                                                             style:UIBarButtonItemStyleDone
+                                                             style:UIBarButtonItemStylePlain
                                                             target:self
                                                             action:@selector(logPoints:)];
+    item.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = item;
     
     self.goButton.layer.cornerRadius = 30;
@@ -90,7 +97,7 @@ static int INDEX = 1;
     [self addTestPoint:CLLocationCoordinate2DMake(30.772670, 103.993903)];
 }
 
-- (void)routeDesign {
+- (void)routeDesignTest {
     self.routeSearch = [[BMKRouteSearch alloc] init];
     self.routeSearch.delegate = self;
     
@@ -278,6 +285,11 @@ static int INDEX = 1;
 }
 
 - (IBAction)logPoints:(id)sender {
+    if (self.dropDownMenuView.isHidden) {
+        [self.dropDownMenuView show];
+    } else {
+        [self.dropDownMenuView close];
+    }
     [self givePoints];
     
 }

@@ -11,6 +11,7 @@
 #import "RouteAnnotation.h"
 #import "NSString+Base64.h"
 #import "HSJDropDownMenuView.h"
+#import "HSJPointModel.h"
 #import <Masonry.h>
 #import <UIKit/UIKit.h>
 
@@ -33,6 +34,7 @@ static int INDEX = 1;
 @property (nonatomic, strong) NSMutableArray<NSValue *> *routePoints;
 @property (nonatomic, strong) NSMutableArray<BMKPolyline *> *polylines;
 @property (assign) NSInteger distance;
+@property (assign) NSInteger pointCnt;
 @end
 
 @implementation ViewController
@@ -43,6 +45,7 @@ static int INDEX = 1;
     self.testPoints = @[].mutableCopy;
     self.polylines = @[].mutableCopy;
     self.distance = 0;
+    self.pointCnt = 0;
     self.requestHeader = [[HSJUserDataDefault alloc] init];
     
     self.mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 480)];
@@ -216,6 +219,9 @@ static int INDEX = 1;
     
     NSLog(@"%@", self.routePoints);
     NSLog(@"%ld", (long)self.distance);
+    self.pointCnt += self.routePoints.count;
+    self.disLabel.text = [NSString stringWithFormat:@"%ld m", self.distance];
+    self.timeLabel.text = [NSString stringWithFormat:@"%.1lf min", (double)self.pointCnt * 20.0 / 60.f];
 }
 
 #pragma mark - BMKMapViewDelegate
@@ -270,6 +276,7 @@ static int INDEX = 1;
 }
 
 - (void)addPoints: (CLLocationCoordinate2D)po {
+    
     CGPoint p = CGPointMake(po.latitude, po.longitude);
     NSValue *pv = [NSValue valueWithCGPoint:p];
     [self.routePoints addObject:pv];
@@ -287,18 +294,30 @@ static int INDEX = 1;
 - (IBAction)logPoints:(id)sender {
     if (self.dropDownMenuView.isHidden) {
         [self.dropDownMenuView show];
+        
         self.goButton.enabled = NO;
     } else {
-        [self.dropDownMenuView close];
+        [self.dropDownMenuView close:^(NSArray<HSJPointModel *> *res) {
+            self.testPoints = @[].mutableCopy;
+            self.distance = 0;
+            self.pointCnt = 0;
+            for (HSJPointModel *model in res) {
+                if (model.state) {
+                    [self addTestPoint:CLLocationCoordinate2DMake(model.y, model.x)];
+                }
+            }
+            INDEX = 1;
+        }];
         self.goButton.enabled = YES;
     }
-    [self givePoints];
-    
 }
 - (IBAction)drawLines:(id)sender {
     self.routePoints = @[].mutableCopy;
-    self.distance = 0;
     [self createRunningRoute];
+    
+    if (INDEX == self.testPoints.count) {
+        [self.goButton setTitle:@"RUN" forState:UIControlStateNormal];
+    }
 }
 
 @end

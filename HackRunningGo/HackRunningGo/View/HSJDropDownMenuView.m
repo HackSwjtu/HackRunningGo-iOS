@@ -8,6 +8,7 @@
 
 #import "HSJDropDownMenuView.h"
 #import "HSJDropDownMenuViewCell.h"
+#import "HSJPointModel.h"
 
 static NSString *CellIdentifier = @"HSJDropDownMenuViewCell";
 
@@ -16,7 +17,8 @@ static NSString *CellIdentifier = @"HSJDropDownMenuViewCell";
 @property (nonatomic, strong) UITableView *menuView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, assign) HSJDropDownMenuRevealDirection direction;
-@property (nonatomic, strong) NSArray<NSDictionary *> *data;
+@property (nonatomic, strong) NSMutableArray<NSDictionary *> *data;
+@property (nonatomic, copy) NSArray<HSJPointModel *> *tableData;
 
 @end
 
@@ -34,15 +36,32 @@ static NSString *CellIdentifier = @"HSJDropDownMenuViewCell";
         [self.menuView registerNib:[UINib nibWithNibName:CellIdentifier bundle:nil] forCellReuseIdentifier:CellIdentifier];
         self.menuView.delegate = self;
         self.menuView.dataSource = self;
+        self.menuView.backgroundColor = [UIColor colorWithRed:105 / 255.0 green:104 / 255.0 blue:104 / 255.0 alpha:1];
         self.hidden = YES;
         [self addSubview:self.contentView];
         
-        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"TestPoints" ofType:@"plist"];
-        NSMutableArray *data = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
-        self.data = data;
-        [self.menuView reloadData];
+        [self clearData];
     }
     return self;
+}
+
+- (void)clearData {
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"TestPoints" ofType:@"plist"];
+    NSMutableArray *data = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
+    NSMutableArray<HSJPointModel *> *newTableData = @[].mutableCopy;
+    
+    for (NSDictionary *one in data) {
+        HSJPointModel *o = [[HSJPointModel alloc] init];
+        o.state = [[one objectForKey:@"state"] boolValue];
+        o.name = (NSString *)[one objectForKey:@"name"];
+        o.x = [[one objectForKey:@"x"] doubleValue];
+        o.y = [[one objectForKey:@"y"] doubleValue];
+        [newTableData addObject:o];
+    }
+    
+    self.tableData = newTableData;
+    
+    [self.menuView reloadData];
 }
 
 - (void)show {
@@ -59,7 +78,7 @@ static NSString *CellIdentifier = @"HSJDropDownMenuViewCell";
     }
 }
 
-- (void)close {
+- (void)close: (dropDownCallBackBlock)callBack {
     if (self.isHidden) {
         return ;
     }
@@ -72,11 +91,12 @@ static NSString *CellIdentifier = @"HSJDropDownMenuViewCell";
                              self.hidden = YES;
                          }];
     }
+    callBack(self.tableData);
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.data.count;
+    return self.tableData.count;
 }
 
 - (HSJDropDownMenuViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,17 +105,21 @@ static NSString *CellIdentifier = @"HSJDropDownMenuViewCell";
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HSJDropDownMenuViewCell" owner:nil options:nil];
         cell = [nib objectAtIndex:0];
     }
-//    NSLog(@"%@", self.data[indexPath.row]);
-    NSDictionary *cellData = (NSDictionary *)self.data[indexPath.row];
-    NSString *name = [cellData objectForKey:@"name"];
-    BOOL show = [cellData objectForKey:@"state"];
-    [cell changeState:name  select:show];
+
+    HSJPointModel *data = self.tableData[indexPath.row];
+    [cell changeState:data.name select:data.state];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    HSJPointModel *data = self.tableData[indexPath.row];
+    if (data.state) {
+        data.state = NO;
+    } else {
+        data.state = YES;
+    }
+    [self.menuView reloadData];
 }
 
 

@@ -29,6 +29,7 @@ static NSString *CellIdentifier = @"HSJDropDownMenuViewCell";
         self.menuView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         [self.contentView addSubview:self.menuView];
         
+        [self.menuView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
         self.menuView.delegate = self;
         self.menuView.dataSource = self;
         self.hidden = YES;

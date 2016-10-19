@@ -38,7 +38,6 @@ You can select special test points freely and generate a route line in the map. 
 
 ## Running Route Generator
 
-<img src="http://of7whelxn.bkt.clouddn.com/DataGenerator.png" width="400px"/>
 
 The Generator can create a simulated running route. And it can pass all selected test points, which can return a `NSArray` to record Route Pointes. Just like following:
 
@@ -86,4 +85,3 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
->>>>>>> 781199250acc39375ddf139aa778e975d804bd9b

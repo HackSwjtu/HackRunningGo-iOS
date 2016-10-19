@@ -10,6 +10,7 @@
 		D58EF88A1DB6EAD70001B71F /* TestPoints.plist in Resources */ = {isa = PBXBuildFile; fileRef = D58EF8891DB6EAD70001B71F /* TestPoints.plist */; };
 		D58EF8911DB733990001B71F /* HSJDropDownMenuViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D58EF88F1DB733990001B71F /* HSJDropDownMenuViewCell.m */; };
 		D58EF8921DB733990001B71F /* HSJDropDownMenuViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58EF8901DB733990001B71F /* HSJDropDownMenuViewCell.xib */; };
+		D58EF8951DB76E130001B71F /* HSJPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D58EF8941DB76E130001B71F /* HSJPointModel.m */; };
 		D5FC65D31DB45E4C003E5D7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65D21DB45E4C003E5D7D /* main.m */; };
 		D5FC65D61DB45E4C003E5D7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65D51DB45E4C003E5D7D /* AppDelegate.m */; };
 		D5FC65D91DB45E4C003E5D7D /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65D81DB45E4C003E5D7D /* ViewController.mm */; };
@@ -34,6 +35,8 @@
 		D58EF88E1DB733990001B71F /* HSJDropDownMenuViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSJDropDownMenuViewCell.h; path = View/HSJDropDownMenuViewCell.h; sourceTree = "<group>"; };
 		D58EF88F1DB733990001B71F /* HSJDropDownMenuViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSJDropDownMenuViewCell.m; path = View/HSJDropDownMenuViewCell.m; sourceTree = "<group>"; };
 		D58EF8901DB733990001B71F /* HSJDropDownMenuViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HSJDropDownMenuViewCell.xib; path = View/HSJDropDownMenuViewCell.xib; sourceTree = "<group>"; };
+		D58EF8931DB76E130001B71F /* HSJPointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSJPointModel.h; path = Model/HSJPointModel.h; sourceTree = "<group>"; };
+		D58EF8941DB76E130001B71F /* HSJPointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSJPointModel.m; path = Model/HSJPointModel.m; sourceTree = "<group>"; };
 		D5FC65CE1DB45E4C003E5D7D /* HackRunningGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackRunningGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5FC65D21DB45E4C003E5D7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D5FC65D41DB45E4C003E5D7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 			children = (
 				D5FC660D1DB5C88C003E5D7D /* HSJUserDataDefault.h */,
 				D5FC660E1DB5C88C003E5D7D /* HSJUserDataDefault.m */,
+				D58EF8931DB76E130001B71F /* HSJPointModel.h */,
+				D58EF8941DB76E130001B71F /* HSJPointModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D58EF8951DB76E130001B71F /* HSJPointModel.m in Sources */,
 				D5FC65F31DB4DB07003E5D7D /* RouteAnnotation.mm in Sources */,
 				D5FC65D91DB45E4C003E5D7D /* ViewController.mm in Sources */,
 				D5FC66121DB62334003E5D7D /* HSJDropDownMenuView.m in Sources */,

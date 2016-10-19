@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class HSJPointModel;
+
+typedef void (^dropDownCallBackBlock)(NSArray<HSJPointModel *> *res);
+
 typedef NS_ENUM(NSInteger, HSJDropDownMenuRevealDirection) {
     HSJDown = 0,
     HSJUp
@@ -25,5 +29,5 @@ typedef NS_ENUM(NSInteger, HSJDropDownMenuRevealDirection) {
 
 @property (nonatomic, weak) id<HSJDropDownMenuDelegate> delegate;
 - (void)show;
-- (void)close;
+- (void)close: (dropDownCallBackBlock)callBack;
 @end

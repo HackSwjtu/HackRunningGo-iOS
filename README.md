@@ -1,4 +1,7 @@
 # HackRunningGo-iOS
+## HaRunGo. 
+
+🏃🏃🏃✈️✈️✈️
 iPhone can run without legs. 😎
 
 ## Screenshot
@@ -26,6 +29,12 @@ User-Agent: SWCampus/1.2.0 (iPhone; iOS 9.3.4; Scale/3.00)
 Connection: keep-alive
 Cache-Control: no-cache
 ```
+
+## Select test points and get route line in map
+
+You can select special test points freely and generate a route line in the map. Some special running routes are designed by you.
+
+<img src="http://of7whelxn.bkt.clouddn.com/tpos2.PNG" width="300px" />   <img src="http://of7whelxn.bkt.clouddn.com/tpos1.PNG" width="300px" />
 
 ## Running Route Generator
 
@@ -77,3 +86,4 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
+>>>>>>> 781199250acc39375ddf139aa778e975d804bd9b

@@ -34,7 +34,7 @@
 }
 
 - (void)updateSelected: (BOOL)isSelected {
-    self.isSelectedImage.hidden = isSelected;
+    self.isSelectedImage.hidden = !isSelected;
 }
 
 @end

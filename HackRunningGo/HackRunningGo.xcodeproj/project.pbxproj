@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D58EF88A1DB6EAD70001B71F /* TestPoints.plist in Resources */ = {isa = PBXBuildFile; fileRef = D58EF8891DB6EAD70001B71F /* TestPoints.plist */; };
+		D58EF88D1DB716CB0001B71F /* HSJDropDownMenuViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D58EF88C1DB716CB0001B71F /* HSJDropDownMenuViewCell.m */; };
 		D5FC65D31DB45E4C003E5D7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65D21DB45E4C003E5D7D /* main.m */; };
 		D5FC65D61DB45E4C003E5D7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65D51DB45E4C003E5D7D /* AppDelegate.m */; };
 		D5FC65D91DB45E4C003E5D7D /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D5FC65D81DB45E4C003E5D7D /* ViewController.mm */; };
@@ -19,6 +21,7 @@
 		D5FC66091DB52627003E5D7D /* icon_start.png in Resources */ = {isa = PBXBuildFile; fileRef = D5FC66031DB52627003E5D7D /* icon_start.png */; };
 		D5FC660C1DB5C6A2003E5D7D /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC660B1DB5C6A2003E5D7D /* NSString+Base64.m */; };
 		D5FC660F1DB5C88C003E5D7D /* HSJUserDataDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC660E1DB5C88C003E5D7D /* HSJUserDataDefault.m */; };
+		D5FC66121DB62334003E5D7D /* HSJDropDownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FC66111DB62334003E5D7D /* HSJDropDownMenuView.m */; };
 		F0E4DA012DFAA3AC29A75829 /* libPods-HackRunningGo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6776D83F6B8F9E18D4B33A29 /* libPods-HackRunningGo.a */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +29,9 @@
 		0007860503FC4246E6E1C508 /* Pods-HackRunningGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackRunningGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackRunningGo/Pods-HackRunningGo.debug.xcconfig"; sourceTree = "<group>"; };
 		62921DBFACB1EE40AE3C823D /* Pods-HackRunningGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackRunningGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackRunningGo/Pods-HackRunningGo.release.xcconfig"; sourceTree = "<group>"; };
 		6776D83F6B8F9E18D4B33A29 /* libPods-HackRunningGo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackRunningGo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58EF8891DB6EAD70001B71F /* TestPoints.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestPoints.plist; sourceTree = "<group>"; };
+		D58EF88B1DB716CB0001B71F /* HSJDropDownMenuViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSJDropDownMenuViewCell.h; path = View/HSJDropDownMenuViewCell.h; sourceTree = "<group>"; };
+		D58EF88C1DB716CB0001B71F /* HSJDropDownMenuViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSJDropDownMenuViewCell.m; path = View/HSJDropDownMenuViewCell.m; sourceTree = "<group>"; };
 		D5FC65CE1DB45E4C003E5D7D /* HackRunningGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackRunningGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5FC65D21DB45E4C003E5D7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D5FC65D41DB45E4C003E5D7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +53,8 @@
 		D5FC660B1DB5C6A2003E5D7D /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Base64.m"; path = "helper/NSString+Base64.m"; sourceTree = "<group>"; };
 		D5FC660D1DB5C88C003E5D7D /* HSJUserDataDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSJUserDataDefault.h; path = Model/HSJUserDataDefault.h; sourceTree = "<group>"; };
 		D5FC660E1DB5C88C003E5D7D /* HSJUserDataDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSJUserDataDefault.m; path = Model/HSJUserDataDefault.m; sourceTree = "<group>"; };
+		D5FC66101DB62334003E5D7D /* HSJDropDownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSJDropDownMenuView.h; path = View/HSJDropDownMenuView.h; sourceTree = "<group>"; };
+		D5FC66111DB62334003E5D7D /* HSJDropDownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSJDropDownMenuView.m; path = View/HSJDropDownMenuView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +114,13 @@
 				D5FC65D51DB45E4C003E5D7D /* AppDelegate.m */,
 				D5FC65D71DB45E4C003E5D7D /* ViewController.h */,
 				D5FC65D81DB45E4C003E5D7D /* ViewController.mm */,
+				D5FC66131DB6233A003E5D7D /* View */,
 				D5FC65F81DB4F3E9003E5D7D /* Helper */,
 				D5FC65F71DB4F3D8003E5D7D /* Model */,
 				D5FC65DA1DB45E4C003E5D7D /* Main.storyboard */,
 				D5FC65DD1DB45E4C003E5D7D /* Assets.xcassets */,
 				D5FC65DF1DB45E4C003E5D7D /* LaunchScreen.storyboard */,
+				D58EF8891DB6EAD70001B71F /* TestPoints.plist */,
 				D5FC65E21DB45E4C003E5D7D /* Info.plist */,
 				D5FC65D11DB45E4C003E5D7D /* Supporting Files */,
 			);
@@ -145,6 +155,17 @@
 				D5FC660B1DB5C6A2003E5D7D /* NSString+Base64.m */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		D5FC66131DB6233A003E5D7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5FC66101DB62334003E5D7D /* HSJDropDownMenuView.h */,
+				D5FC66111DB62334003E5D7D /* HSJDropDownMenuView.m */,
+				D58EF88B1DB716CB0001B71F /* HSJDropDownMenuViewCell.h */,
+				D58EF88C1DB716CB0001B71F /* HSJDropDownMenuViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +234,7 @@
 				D5FC65E11DB45E4C003E5D7D /* LaunchScreen.storyboard in Resources */,
 				D5FC65DE1DB45E4C003E5D7D /* Assets.xcassets in Resources */,
 				D5FC65DC1DB45E4C003E5D7D /* Main.storyboard in Resources */,
+				D58EF88A1DB6EAD70001B71F /* TestPoints.plist in Resources */,
 				D5FC65FD1DB5260E003E5D7D /* icon_waypoint.png in Resources */,
 				D5FC66091DB52627003E5D7D /* icon_start.png in Resources */,
 			);
@@ -275,6 +297,8 @@
 			files = (
 				D5FC65F31DB4DB07003E5D7D /* RouteAnnotation.mm in Sources */,
 				D5FC65D91DB45E4C003E5D7D /* ViewController.mm in Sources */,
+				D5FC66121DB62334003E5D7D /* HSJDropDownMenuView.m in Sources */,
+				D58EF88D1DB716CB0001B71F /* HSJDropDownMenuViewCell.m in Sources */,
 				D5FC65D61DB45E4C003E5D7D /* AppDelegate.m in Sources */,
 				D5FC65F61DB4DBDF003E5D7D /* UIImage+Rotate.m in Sources */,
 				D5FC660F1DB5C88C003E5D7D /* HSJUserDataDefault.m in Sources */,

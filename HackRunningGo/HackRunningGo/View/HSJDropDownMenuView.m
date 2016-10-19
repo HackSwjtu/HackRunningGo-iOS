@@ -7,6 +7,7 @@
 //
 
 #import "HSJDropDownMenuView.h"
+#import "HSJDropDownMenuViewCell.h"
 
 static NSString *CellIdentifier = @"HSJDropDownMenuViewCell";
 
@@ -15,6 +16,7 @@ static NSString *CellIdentifier = @"HSJDropDownMenuViewCell";
 @property (nonatomic, strong) UITableView *menuView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, assign) HSJDropDownMenuRevealDirection direction;
+@property (nonatomic, strong) NSArray<NSDictionary *> *data;
 
 @end
 
@@ -29,12 +31,16 @@ static NSString *CellIdentifier = @"HSJDropDownMenuViewCell";
         self.menuView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         [self.contentView addSubview:self.menuView];
         
-        [self.menuView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
+        [self.menuView registerNib:[UINib nibWithNibName:CellIdentifier bundle:nil] forCellReuseIdentifier:CellIdentifier];
         self.menuView.delegate = self;
         self.menuView.dataSource = self;
         self.hidden = YES;
-        self.backgroundColor = [UIColor redColor];
         [self addSubview:self.contentView];
+        
+        NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"TestPoints" ofType:@"plist"];
+        NSMutableArray *data = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
+        self.data = data;
+        [self.menuView reloadData];
     }
     return self;
 }
@@ -70,15 +76,26 @@ static NSString *CellIdentifier = @"HSJDropDownMenuViewCell";
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return self.data.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+- (HSJDropDownMenuViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HSJDropDownMenuViewCell *cell = (HSJDropDownMenuViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HSJDropDownMenuViewCell" owner:nil options:nil];
+        cell = [nib objectAtIndex:0];
     }
+//    NSLog(@"%@", self.data[indexPath.row]);
+    NSDictionary *cellData = (NSDictionary *)self.data[indexPath.row];
+    NSString *name = [cellData objectForKey:@"name"];
+    BOOL show = [cellData objectForKey:@"state"];
+    [cell changeState:name  select:show];
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 

@@ -10,4 +10,7 @@
 
 @interface HSJDropDownMenuViewCell : UITableViewCell
 
+- (void)changeState: (NSString *)pos select:(BOOL)sel;
+- (void)updatePositionName: (NSString *)position;
+
 @end

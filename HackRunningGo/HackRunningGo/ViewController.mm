@@ -58,7 +58,7 @@ static int INDEX = 1;
     
     [self updateLayout];
     
-    self.dropDownMenuView = [[HSJDropDownMenuView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height, self.view.frame.size.width, self.mapView.frame.size.height)];
+    self.dropDownMenuView = [[HSJDropDownMenuView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height, self.view.frame.size.width, 400)];
     [self.view addSubview:self.dropDownMenuView];
     
 }
@@ -287,8 +287,10 @@ static int INDEX = 1;
 - (IBAction)logPoints:(id)sender {
     if (self.dropDownMenuView.isHidden) {
         [self.dropDownMenuView show];
+        self.goButton.enabled = NO;
     } else {
         [self.dropDownMenuView close];
+        self.goButton.enabled = YES;
     }
     [self givePoints];
     

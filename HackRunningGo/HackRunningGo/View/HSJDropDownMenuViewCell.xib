@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="HSJDropDownMenuViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="HSJDropDownMenuViewCell" id="KGk-i7-Jjw" customClass="HSJDropDownMenuViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="success" translatesAutoresizingMaskIntoConstraints="NO" id="5np-RA-WTg">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="E0g-XX-EIz"/>
+                            <constraint firstAttribute="width" constant="26" id="MXP-xS-EuU"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图书馆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsD-Uv-28a">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.41176470588235292" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="5np-RA-WTg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="3ow-LU-KW1"/>
+                    <constraint firstItem="5np-RA-WTg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Da2-O8-x22"/>
+                    <constraint firstItem="dsD-Uv-28a" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="L9z-a4-XPA"/>
+                    <constraint firstItem="dsD-Uv-28a" firstAttribute="leading" secondItem="5np-RA-WTg" secondAttribute="trailing" constant="22" id="mMc-fl-x8r"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="isSelectedImage" destination="5np-RA-WTg" id="Cbp-CN-qsJ"/>
+                <outlet property="positionLabel" destination="dsD-Uv-28a" id="osr-gD-cI3"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="success" width="200" height="200"/>
+    </resources>
+</document>

@@ -34,7 +34,7 @@ Cache-Control: no-cache
 
 You can select special test points freely and generate a route line in the map. Some special running routes are designed by you.
 
-<img src="http://of7whelxn.bkt.clouddn.com/tpos2.PNG" width="300px" />   <img src="http://of7whelxn.bkt.clouddn.com/tpos1.PNG" width="300px" />
+<img src="http://of7whelxn.bkt.clouddn.com/tpos2.PNG" width="300px" /> 
 
 ## Running Route Generator
 

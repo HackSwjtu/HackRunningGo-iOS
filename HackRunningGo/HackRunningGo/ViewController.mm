@@ -12,6 +12,7 @@
 #import "NSString+Base64.h"
 #import "HSJDropDownMenuView.h"
 #import "HSJPointModel.h"
+#import "HSJNetwork.h"
 #import <Masonry.h>
 #import <UIKit/UIKit.h>
 
@@ -64,6 +65,17 @@ static int INDEX = 1;
     self.dropDownMenuView = [[HSJDropDownMenuView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height, self.view.frame.size.width, 400)];
     [self.view addSubview:self.dropDownMenuView];
     
+    [self test];
+    
+}
+
+- (void)test {
+    HSJUserDataDefault *user = [HSJUserDataDefault new];
+    user.userName = @"15928403803";
+    user.password = @"dhy94113";
+    [HSJNetwork loginByName:user handler:^(NSDictionary *dic) {
+        NSLog(@"%@", dic);
+    }];
 }
 
 - (void)updateLayout {

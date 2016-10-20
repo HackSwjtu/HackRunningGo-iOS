@@ -26,5 +26,11 @@
 @property (nonatomic, copy) NSString *contentLength;
 @property (nonatomic, copy) NSString *userAgent;
 @property (nonatomic, copy) NSString *connection;
+@property (nonatomic, copy) NSString *uid;
+@property (nonatomic, copy) NSString *nick;
+@property (nonatomic, copy) NSString *unid;
+@property (nonatomic, copy) NSString *icon;
+@property (nonatomic, copy) NSString *source;
+
 
 @end

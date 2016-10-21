@@ -14,5 +14,7 @@ typedef void (^callBackBlock)(NSDictionary *dic);
 @interface HSJNetwork : NSObject
 
 + (void)loginByName:(HSJUserDataDefault *)user handler: (callBackBlock)callback;
++ (void)uploadData:(HSJUserDataDefault *)user handler: (callBackBlock)callback;
++ (void)logout: (HSJUserDataDefault *)user handler: (callBackBlock)callback;
 
 @end

@@ -73,9 +73,17 @@ static int INDEX = 1;
     HSJUserDataDefault *user = [HSJUserDataDefault new];
     user.userName = @"15928403803";
     user.password = @"dhy94113";
-    [HSJNetwork loginByName:user handler:^(NSDictionary *dic) {
-        NSLog(@"%@", dic);
-    }];
+    NSString *sa = user.customDeviceId;
+//    [HSJNetwork loginByName:user handler:^(NSDictionary *dic) {
+//        NSDictionary *data = [dic objectForKey:@"data"];
+//        HSJUserDataDefault *ou = user;
+//        ou.uid = [NSString stringWithFormat:@"%@", [data objectForKey:@"uid"]];
+//        [HSJNetwork uploadData:ou handler:^(NSDictionary *dic) {
+//            [HSJNetwork logout:user handler:^(NSDictionary *dic) {
+//                
+//            }];
+//        }];
+//    }];
 }
 
 - (void)updateLayout {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D5013CE61DB8B1CB009A6C67 /* HSJRouteLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5013CE51DB8B1CB009A6C67 /* HSJRouteLineModel.m */; };
+		D5013CEA1DB9BAD3009A6C67 /* Line.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5013CE91DB9BAD3009A6C67 /* Line.plist */; };
 		D58EF88A1DB6EAD70001B71F /* TestPoints.plist in Resources */ = {isa = PBXBuildFile; fileRef = D58EF8891DB6EAD70001B71F /* TestPoints.plist */; };
 		D58EF8911DB733990001B71F /* HSJDropDownMenuViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D58EF88F1DB733990001B71F /* HSJDropDownMenuViewCell.m */; };
 		D58EF8921DB733990001B71F /* HSJDropDownMenuViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58EF8901DB733990001B71F /* HSJDropDownMenuViewCell.xib */; };
@@ -35,6 +36,7 @@
 		6776D83F6B8F9E18D4B33A29 /* libPods-HackRunningGo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackRunningGo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5013CE41DB8B1CB009A6C67 /* HSJRouteLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSJRouteLineModel.h; path = Model/HSJRouteLineModel.h; sourceTree = "<group>"; };
 		D5013CE51DB8B1CB009A6C67 /* HSJRouteLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSJRouteLineModel.m; path = Model/HSJRouteLineModel.m; sourceTree = "<group>"; };
+		D5013CE91DB9BAD3009A6C67 /* Line.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Line.plist; sourceTree = "<group>"; };
 		D58EF8891DB6EAD70001B71F /* TestPoints.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestPoints.plist; sourceTree = "<group>"; };
 		D58EF88E1DB733990001B71F /* HSJDropDownMenuViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSJDropDownMenuViewCell.h; path = View/HSJDropDownMenuViewCell.h; sourceTree = "<group>"; };
 		D58EF88F1DB733990001B71F /* HSJDropDownMenuViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSJDropDownMenuViewCell.m; path = View/HSJDropDownMenuViewCell.m; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				D5FC65DD1DB45E4C003E5D7D /* Assets.xcassets */,
 				D5FC65DF1DB45E4C003E5D7D /* LaunchScreen.storyboard */,
 				D58EF8891DB6EAD70001B71F /* TestPoints.plist */,
+				D5013CE91DB9BAD3009A6C67 /* Line.plist */,
 				D5FC65E21DB45E4C003E5D7D /* Info.plist */,
 				D5FC65D11DB45E4C003E5D7D /* Supporting Files */,
 			);
@@ -261,6 +264,7 @@
 				D5FC65DE1DB45E4C003E5D7D /* Assets.xcassets in Resources */,
 				D58EF8921DB733990001B71F /* HSJDropDownMenuViewCell.xib in Resources */,
 				D5FC65DC1DB45E4C003E5D7D /* Main.storyboard in Resources */,
+				D5013CEA1DB9BAD3009A6C67 /* Line.plist in Resources */,
 				D58EF88A1DB6EAD70001B71F /* TestPoints.plist in Resources */,
 				D5FC65FD1DB5260E003E5D7D /* icon_waypoint.png in Resources */,
 				D5FC66091DB52627003E5D7D /* icon_start.png in Resources */,

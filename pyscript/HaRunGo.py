@@ -3,6 +3,9 @@ import requests
 import json
 import base64
 import random
+import datetime
+import re
+import time
 
 # Globle Var
 file1 = open('route.data')
@@ -12,6 +15,10 @@ file1.close()
 file2 = open('tp.data')
 tps = file2.readlines()
 file2.close()
+
+file3 = open('totTime.data')
+tots = file3.readlines()
+file3.close()
 
 tot_cnt = len(routes)
 
@@ -36,6 +43,37 @@ def virtualCustomDeviceId(username):
 
 def selectRoute():
     return int(random.uniform(0, tot_cnt - 1))
+
+def datetime_to_timestamp_in_milliseconds(d):
+    return int(time.mktime(d.timetuple()) * 1000)
+
+def format(data, totTime):
+    data = str(data)
+    res = re.findall(r'\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}', data)
+    startTime = res[0]
+    startDate = startTime[0:10]
+    dateToday = datetime.date.today()
+    newData = data.replace(startDate, str(dateToday))
+
+    startTimeDtObj = datetime.datetime.now() + datetime.timedelta(seconds = -int(totTime))
+    endTimeDtObj = startTimeDtObj + datetime.timedelta(seconds = int(totTime))
+
+    # startTimeDtObj = datetime.datetime.strptime(startTime, "%Y-%m-%d %H:%M:%S")
+    # startTimeTiObj = time.strptime(startTime, "%Y-%m-%d %H:%M:%S")
+    st = datetime_to_timestamp_in_milliseconds(startTimeDtObj)
+    et = datetime_to_timestamp_in_milliseconds(endTimeDtObj)
+    # newData = data.replace(str(dataDate), str(data_today))
+
+    res = re.findall(r'\d{13}', newData)
+    newData = newData.replace(res[0], str(st))
+
+    # print("new data: " + newData)
+    # print("totTime:  " + str(totTime))
+    # print("start:    " + str(st))
+    # print("end:      " + str(et))
+
+    return str(newData), int(st), int(et)
+
 
 def login(username, pwd):
     url = 'http://gxapp.iydsj.com/api/v3/login'
@@ -74,16 +112,19 @@ def dataUpload(username, pwd, uid):
         "Authorization": base64encode(username, pwd),
     }
     index = selectRoute()
-    print ("Use " + str(index) + " data.")
+    print ("Use " + str(index) + " data")
+
+    thisdata, st, et = format(routes[index], tots[index])
+
     json = {
-        "allLocJson":routes[index],
+        "allLocJson":thisdata,
         "fivePointJson":tps[index],
         "complete": "true",
-        "totalTime": 717,
+        "totalTime": tots[index],
         "totalDis": "1.950000",
-        "stopTime": 1476900049950,
+        "stopTime": et,
         "speed": "6.128205",
-        "startTime": 1476908758891,
+        "startTime": st,
         "sportType": 1,
         "selDistance": 1,
         "abnormal": 0,
@@ -128,13 +169,15 @@ def writeByData():
 def main():
     users = writeByData()
 
+    index = selectRoute()
+    # format(routes[index], 100)
     for u in users:
-        # username, password = u.split(' ')
-        # print username, password
-        # uid = login(username, password)
-        # dataUpload(username, password, uid)
-        # logout(username, password)
+        username, password = u.split(' ')
+        print username, password
+        uid = login(username, password)
+        dataUpload(username, password, uid)
+        logout(username, password)
 
 
-if __name__=='__main__':
+if __name__== '__main__':
     main()
